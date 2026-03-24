@@ -27,26 +27,26 @@ const NAVIGATION = [
   {
     section: "Administracion",
     items: [
-      { href: "/dashboard/hospitales", icon: Building2, label: "Hospitales" },
-      { href: "/dashboard/especialidades", icon: Stethoscope, label: "Especialidades" },
-      { href: "/dashboard/medicamentos", icon: Pill, label: "Medicamentos" },
+      { href: "/hospitales", icon: Building2, label: "Hospitales" },
+      { href: "/especialidades", icon: Stethoscope, label: "Especialidades" },
+      { href: "/medicamentos", icon: Pill, label: "Medicamentos" },
     ],
   },
   {
     section: "Atencion Medica",
     items: [
-      { href: "/dashboard/medicos", icon: UserRound, label: "Medicos" },
-      { href: "/dashboard/pacientes", icon: Users, label: "Pacientes" },
-      { href: "/dashboard/visitas", icon: ClipboardList, label: "Visitas" },
-      { href: "/dashboard/tratamientos", icon: HeartPulse, label: "Tratamientos" },
+      { href: "/medicos", icon: UserRound, label: "Medicos" },
+      { href: "/pacientes", icon: Users, label: "Pacientes" },
+      { href: "/visitas", icon: ClipboardList, label: "Visitas" },
+      { href: "/tratamientos", icon: HeartPulse, label: "Tratamientos" },
     ],
   },
   {
     section: "Documentos",
     items: [
-      { href: "/dashboard/formulas", icon: FileText, label: "Formulas" },
-      { href: "/dashboard/examenes", icon: FlaskConical, label: "Examenes" },
-      { href: "/dashboard/incapacidades", icon: Shield, label: "Incapacidades" },
+      { href: "/formulas", icon: FileText, label: "Formulas" },
+      { href: "/examenes", icon: FlaskConical, label: "Examenes" },
+      { href: "/incapacidades", icon: Shield, label: "Incapacidades" },
     ],
   },
 ];
@@ -80,11 +80,10 @@ export function Sidebar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                    isActive(href)
+                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive(href)
                       ? "bg-green-600 text-white shadow-sm"
                       : "text-green-100 hover:bg-green-700 hover:text-white"
-                  }`}
+                    }`}
                 >
                   <Icon size={16} strokeWidth={2} />
                   {label}
