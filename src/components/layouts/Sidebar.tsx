@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   Building2,
@@ -16,6 +16,7 @@ import {
   Shield,
   LogOut,
 } from "lucide-react";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 const NAVIGATION = [
   {
@@ -37,7 +38,7 @@ const NAVIGATION = [
     items: [
       { href: "/medicos", icon: UserRound, label: "Medicos" },
       { href: "/pacientes", icon: Users, label: "Pacientes" },
-      { href: "/visitas", icon: ClipboardList, label: "Visitas" },
+      { href: "/visitas/nueva", icon: ClipboardList, label: "Visitas" },
       { href: "/tratamientos", icon: HeartPulse, label: "Tratamientos" },
     ],
   },
@@ -53,10 +54,17 @@ const NAVIGATION = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   const isActive = (href: string) =>
     pathname === href ||
     (href !== "/dashboard" && pathname.startsWith(href));
+
+  async function handleLogout() {
+    const supabase = createBrowserSupabaseClient();
+    await supabase.auth.signOut();
+    router.push("/login");
+  }
 
   return (
     <aside className="w-64 bg-green-800 text-white flex flex-col shrink-0 h-full">
@@ -81,9 +89,9 @@ export function Sidebar() {
                   key={href}
                   href={href}
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive(href)
-                      ? "bg-green-600 text-white shadow-sm"
-                      : "text-green-100 hover:bg-green-700 hover:text-white"
-                    }`}
+                    ? "bg-green-600 text-white shadow-sm"
+                    : "text-green-100 hover:bg-green-700 hover:text-white"
+                  }`}
                 >
                   <Icon size={16} strokeWidth={2} />
                   {label}
@@ -96,7 +104,10 @@ export function Sidebar() {
 
       {/* Footer */}
       <div className="p-3 border-t border-green-700">
-        <button className="flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm text-green-300 hover:bg-green-700 hover:text-white transition-colors">
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm text-green-300 hover:bg-green-700 hover:text-white transition-colors cursor-pointer"
+        >
           <LogOut size={16} />
           Cerrar sesion
         </button>
