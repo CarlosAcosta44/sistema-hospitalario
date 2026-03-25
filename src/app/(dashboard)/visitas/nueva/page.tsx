@@ -43,7 +43,7 @@ export default function NuevaVisitaPage() {
                 name="pacienteid"
                 type="number"
                 required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
                 placeholder="ID del paciente"
               />
               {state?.errors?.pacienteid && (
@@ -61,7 +61,7 @@ export default function NuevaVisitaPage() {
                 name="medicoid"
                 type="number"
                 required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
                 placeholder="ID del medico"
               />
             </div>
@@ -75,7 +75,7 @@ export default function NuevaVisitaPage() {
                 type="date"
                 required
                 defaultValue={new Date().toISOString().split("T")[0]}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -87,7 +87,7 @@ export default function NuevaVisitaPage() {
                 name="hora"
                 type="time"
                 required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function NuevaVisitaPage() {
               <input
                 name="motivoid"
                 type="number"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -117,7 +117,7 @@ export default function NuevaVisitaPage() {
               <textarea
                 name="diagnostico"
                 rows={3}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
                 placeholder="Describa el diagnostico del paciente..."
               />
             </div>
@@ -140,7 +140,7 @@ export default function NuevaVisitaPage() {
                 min="30"
                 max="300"
                 placeholder="72"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -152,7 +152,7 @@ export default function NuevaVisitaPage() {
                 name="presionArterial"
                 type="text"
                 placeholder="120/80"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -166,7 +166,7 @@ export default function NuevaVisitaPage() {
                 min="5"
                 max="60"
                 placeholder="16"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -181,7 +181,7 @@ export default function NuevaVisitaPage() {
                 max="45"
                 step="0.1"
                 placeholder="36.5"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
 
@@ -196,7 +196,7 @@ export default function NuevaVisitaPage() {
                 max="100"
                 step="0.1"
                 placeholder="98.0"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-500"
               />
             </div>
           </div>
@@ -214,14 +214,14 @@ export default function NuevaVisitaPage() {
           <button
             type="button"
             onClick={() => history.back()}
-            className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50"
+            className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
           >
             Cancelar
           </button>
           <button
             type="submit"
             disabled={isPending}
-            className="px-6 py-2 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="px-6 py-2 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
             {isPending ? "Registrando..." : "Registrar Visita"}
           </button>
