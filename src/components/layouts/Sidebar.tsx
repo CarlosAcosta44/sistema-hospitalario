@@ -38,7 +38,7 @@ const NAVIGATION = [
     items: [
       { href: "/medicos", icon: UserRound, label: "Medicos" },
       { href: "/pacientes", icon: Users, label: "Pacientes" },
-      { href: "/visitas/nueva", icon: ClipboardList, label: "Visitas" },
+      { href: "/visitas", icon: ClipboardList, label: "Visitas" },
       { href: "/tratamientos", icon: HeartPulse, label: "Tratamientos" },
     ],
   },
